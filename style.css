@@ -1,0 +1,24 @@
+body{
+    background-color: #f1f5f9;
+}
+.page {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.forms {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+@media (min-width: 1024px) {
+    .page {
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+    }
+}

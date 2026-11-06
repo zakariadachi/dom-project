@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusDirect — Réseau</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="src/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <section class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex gap-2 items-center">
+        <img src="img/logo.png" alt="logo" class="w-[50px] h-[40px]">
+        <h1 class="text-xl font-bold text-sky-900">BusDirect</h1>
+      </div>
+      <nav>
+        <a class="text-sm font-medium text-cyan-700 hover:text-sky-900" href="#">Réseau</a>
+      </nav>
+    </section>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-6">
+
+    <!-- Stats -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="flex flex-col shadow rounded-xl gap-1 p-4 bg-white" id="trajets">
+        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Trajets</span>
+      </div>
+      <div class="flex flex-col shadow rounded-xl gap-1 p-4 bg-white" id="num_passagers">
+        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Passagers</span>
+      </div>
+      <div class="flex flex-col shadow rounded-xl gap-1 p-4 bg-white" id="recette">
+        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Recette totale</span>
+      </div>
+      <div class="flex flex-col shadow rounded-xl gap-1 p-4 bg-white" id="trajets_complete">
+        <span class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Trajets complets</span>
+      </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="flex flex-col sm:flex-row gap-3 p-4 rounded-xl bg-white shadow">
+      <input type="search" id="search"
+        class="flex-1 h-11 border border-gray-300 rounded-xl px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Rechercher par ville…">
+      <select id="tries"
+        class="h-11 border border-gray-300 rounded-xl px-4 text-sm bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="Tout">Tous les trajets</option>
+        <option value="Disponible">Disponible</option>
+        <option value="Complete">Complet</option>
+      </select>
+    </section>
+
+    <!-- Cards -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="AllCards"></section>
+
+    <!-- Pagination -->
+    <section id="pagination" class="flex justify-center gap-2 pb-10"></section>
+
+  </main>
+
+  <script type="module" src="./JS/main-trajets.js"></script>
+</body>
+</html>
